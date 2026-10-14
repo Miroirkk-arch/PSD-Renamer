@@ -1,5 +1,17 @@
 # PSD-Renamer · PSD命名修改
 
+[![Latest release](https://img.shields.io/github/v/release/Miroirkk-arch/PSD-Renamer)](https://github.com/Miroirkk-arch/PSD-Renamer/releases/latest) ![Windows x64](https://img.shields.io/badge/platform-Windows%20x64-blue) ![Offline](https://img.shields.io/badge/PSD%20processing-offline-green)
+
+**[下载最新版 / Download latest](https://github.com/Miroirkk-arch/PSD-Renamer/releases/latest)** · [v1.1.4 Windows ZIP](https://github.com/Miroirkk-arch/PSD-Renamer/releases/download/v1.1.4/PSDNaming-v1.1.4-win-x64.zip) · [反馈 / Report an issue](https://github.com/Miroirkk-arch/PSD-Renamer/issues/new/choose)
+
+Windows 64 位 · 中文界面 · 无需 Photoshop · 无需安装 Node.js 或 Qt  
+Windows x64 · Chinese UI · No Photoshop required · Bundled runtimes
+
+![软件界面 / Application preview](preview.png)
+
+截图使用测试文档。 / Screenshot uses a test document.
+
+
 快速批量修改 PSD 图层名称的 Windows 桌面工具。支持字典翻译、自定义命名方案、方向后缀和数字／字母编号。
 
 A Windows desktop tool for quickly renaming PSD layers in batches, with editable translation dictionaries, custom naming profiles, direction suffixes, and numeric or alphabetic numbering.
@@ -18,7 +30,7 @@ A Windows desktop tool for quickly renaming PSD layers in batches, with editable
 
 ### 下载与打开
 
-在本仓库的 **Releases** 下载 `PSDNaming-v版本号-win-x64.zip`，解压完整文件夹后打开 `PSD命名修改.exe`。请保留文件夹中的运行依赖，不要只复制 exe。
+在 [最新发布页](https://github.com/Miroirkk-arch/PSD-Renamer/releases/latest) 下载 `PSDNaming-v版本号-win-x64.zip`，解压完整文件夹后打开 `PSD命名修改.exe`。请保留文件夹中的运行依赖，不要只复制 exe。
 
 适用于 Windows 64 位电脑；无需安装或打开 Photoshop，也无需单独安装 Node.js 或 Qt。
 
@@ -46,7 +58,7 @@ PSD 读取、修改、预览和保存，以及字典管理，都在本地完成�
 
 ### Download and run
 
-Download `PSDNaming-vVERSION-win-x64.zip` from this repository's **Releases**, extract the entire folder, and run `PSD命名修改.exe`. Keep the included runtime files alongside the executable.
+Download `PSDNaming-vVERSION-win-x64.zip` from the [latest release page](https://github.com/Miroirkk-arch/PSD-Renamer/releases/latest), extract the entire folder, and run `PSD命名修改.exe`. Keep the included runtime files alongside the executable.
 
 For 64-bit Windows. Photoshop is not required, and there is no need to install Node.js or Qt separately.
 
@@ -59,3 +71,14 @@ To update, close the old app and extract the new ZIP into a new folder. Personal
 ### Feedback
 
 Use **Issues** for bug reports and suggestions. Include the app version, steps to reproduce, and relevant screenshots. Please do not upload PSD files containing private material.
+
+## 更多信息 / More information
+
+- [常见问题与反馈 / FAQ & support](SUPPORT.md)
+- [版本记录 / Changelog](CHANGELOG.md)
+- [第三方组件 / Third-party notices](THIRD_PARTY_NOTICES.md)
+- [v1.1.4 SHA256](SHA256SUMS.txt)
+
+本仓库用于发布程序、说明文档和收集反馈；当前不包含应用源码。GitHub 自动生成的 Source code 压缩包仅包含仓库文档，请下载 Releases 附件中的 Windows ZIP。
+
+This repository distributes the app and documentation and collects feedback. Application source code is not included. GitHub’s generated Source code archives contain repository documentation; download the Windows ZIP attached to Releases.
