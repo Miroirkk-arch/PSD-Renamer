@@ -2,7 +2,7 @@
 
 [![Latest release](https://img.shields.io/github/v/release/Miroirkk-arch/PSD-Renamer)](https://github.com/Miroirkk-arch/PSD-Renamer/releases/latest) ![Windows x64](https://img.shields.io/badge/platform-Windows%20x64-blue) ![Offline](https://img.shields.io/badge/PSD%20processing-offline-green)
 
-**[下载最新版 / Download latest](https://github.com/Miroirkk-arch/PSD-Renamer/releases/latest)** · [v1.1.4 Windows ZIP](https://github.com/Miroirkk-arch/PSD-Renamer/releases/download/v1.1.4/PSDNaming-v1.1.4-win-x64.zip) · [反馈 / Report an issue](https://github.com/Miroirkk-arch/PSD-Renamer/issues/new/choose)
+**[下载最新版 / Download latest](https://github.com/Miroirkk-arch/PSD-Renamer/releases/latest)** · [v1.2.0 Windows ZIP](https://github.com/Miroirkk-arch/PSD-Renamer/releases/download/v1.2.0/PSDNaming-v1.2.0-win-x64.zip) · [反馈 / Report an issue](https://github.com/Miroirkk-arch/PSD-Renamer/issues/new/choose)
 
 Windows 64 位 · 中文界面 · 无需 Photoshop · 无需安装 Node.js 或 Qt  
 Windows x64 · Chinese UI · No Photoshop required · Bundled runtimes
@@ -21,9 +21,11 @@ A Windows desktop tool for quickly renaming PSD layers in batches, with editable
 ### 主要功能
 
 - **批量命名**：内置可编辑的英语字典，支持创建、复制、切换和导入导出自定义方案；重复匹配名称会提示冲突。
+- **词库匹配**：完全匹配／包含匹配，应用前预览原名与新名。
+- **图层列表与搜索**：Ctrl+F 打开树状列表，支持编辑名称、全选与批量替换；主界面搜索框直接筛选图层。
 - **方向后缀**：自定义屏幕左侧、右侧、中轴的后缀与分割符，分别选择应用到图层或文件夹。
 - **自动编号**：数字 `1、2、3` 或字母 `A、B、C`，字母超过 `Z` 后继续 `AA、AB`；保持选择时再次点击可撤销编号。
-- **图层管理**：树状列表、Ctrl 多选、Shift 范围选择、新建图层／文件夹、拖拽排序和移动到组、删除图层及空组。
+- **图层管理**：树状列表、Ctrl 多选、Shift 范围选择、新建图层／文件夹、拖拽排序和移动到组、删除图层及文件夹（含内容，需确认）。
 - **预览**：图层缩略图与整体画布，支持画布缩放、显隐切换和调整分栏宽度；可分别关闭缩略图与画布。
 - **另存文件**：保存前查看所有改动，默认使用 `原名_1.psd`，不覆盖原文件。
 - **界面**：深浅色模式，当前软件界面为中文。
@@ -49,9 +51,11 @@ PSD 读取、修改、预览和保存，以及字典管理，都在本地完成�
 ### Features
 
 - **Batch renaming:** an editable built-in English dictionary, multiple custom naming profiles, profile duplication and switching, JSON import/export, and conflict detection for ambiguous matching names.
+- **Dictionary matching:** exact or contains matching, with a before/after preview before applying.
+- **Layer list and search:** Ctrl+F opens an editable tree with select-all and batch replacement; toolbar search filters the main layer tree.
 - **Direction suffixes:** customizable suffixes for the screen's left side, right side, and center, with a custom separator and independent layer/group scope.
 - **Automatic numbering:** `1, 2, 3` or `A, B, C`, continuing with `AA, AB` after `Z`. Click again with the same selection to undo numbering.
-- **Layer management:** a tree view, Ctrl multi-selection, Shift range selection, new layers and groups, drag-and-drop ordering and regrouping, and deletion of layers or empty groups.
+- **Layer management:** a tree view, Ctrl multi-selection, Shift range selection, new layers and groups, drag-and-drop ordering and regrouping, and confirmed deletion of layers and groups, including their contents.
 - **Previews:** layer thumbnails and a zoomable canvas, visibility controls, an adjustable divider, and separate switches to hide thumbnails or the canvas.
 - **Save as a new file:** review changes before saving; the default name is `original_1.psd`. The source file is kept intact.
 - **Appearance:** light and dark modes. The application interface is currently in Chinese.
@@ -77,8 +81,20 @@ Use **Issues** for bug reports and suggestions. Include the app version, steps t
 - [常见问题与反馈 / FAQ & support](SUPPORT.md)
 - [版本记录 / Changelog](CHANGELOG.md)
 - [第三方组件 / Third-party notices](THIRD_PARTY_NOTICES.md)
-- [v1.1.4 SHA256](SHA256SUMS.txt)
+- [v1.2.0 SHA256](SHA256SUMS.txt)
 
-本仓库用于发布程序、说明文档和收集反馈；当前不包含应用源码。GitHub 自动生成的 Source code 压缩包仅包含仓库文档，请下载 Releases 附件中的 Windows ZIP。
+本仓库包含原生版源码、文档与反馈入口。直接使用请下载 Releases 附件中的 Windows ZIP；GitHub 自动生成的 Source code 压缩包是源码，不是可运行程序。
 
-This repository distributes the app and documentation and collects feedback. Application source code is not included. GitHub’s generated Source code archives contain repository documentation; download the Windows ZIP attached to Releases.
+This repository includes native application source, documentation, and issue reporting. To run the app, download the Windows ZIP attached to Releases. GitHub’s generated Source code archives are for development, not ready-to-run binaries.
+
+## 开源许可 / License
+
+本项目自有代码采用 [MIT 许可证](LICENSE)，允许免费使用、修改、商用和再分发，需保留版权与许可声明。第三方组件仍遵循各自的许可证，见 [第三方组件说明](THIRD_PARTY_NOTICES.md)。
+
+Original project code is licensed under the [MIT License](LICENSE), permitting free use, modification, commercial use, and redistribution with the copyright and license notice retained. Third-party components retain their respective licenses; see [Third-party notices](THIRD_PARTY_NOTICES.md).
+
+## 从源码构建 / Build from source
+
+当前界面为 C++ / Qt Widgets，不依赖 Electron。PSD 编解码由随包运行的 Node.js + ag-psd 完成。构建步骤见 [native/README.md](native/README.md)，发布步骤见 [native/PUBLISH.md](native/PUBLISH.md)。
+
+The current UI uses C++ / Qt Widgets without Electron. PSD decoding and encoding use a bundled Node.js + ag-psd process. See [native/README.md](native/README.md) for building and [native/PUBLISH.md](native/PUBLISH.md) for release preparation.

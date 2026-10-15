@@ -1,0 +1,450 @@
+{
+  "Head": {
+    "chinese": "头部",
+    "aliases": [
+      "头部"
+    ],
+    "order": 0
+  },
+  "Hair": {
+    "chinese": "头发",
+    "aliases": [
+      "头发"
+    ],
+    "order": 1
+  },
+  "Ahoge": {
+    "chinese": "呆毛",
+    "aliases": [
+      "呆毛"
+    ],
+    "order": 2
+  },
+  "HairFront": {
+    "chinese": "前发",
+    "aliases": [
+      "前发"
+    ],
+    "order": 3
+  },
+  "HairSide": {
+    "chinese": "侧发",
+    "aliases": [
+      "侧发"
+    ],
+    "order": 4
+  },
+  "HairBack": {
+    "chinese": "后发",
+    "aliases": [
+      "后发"
+    ],
+    "order": 5
+  },
+  "HairPonytail": {
+    "chinese": "马尾",
+    "aliases": [
+      "马尾"
+    ],
+    "order": 6
+  },
+  "Neck": {
+    "chinese": "脖子",
+    "aliases": [
+      "脖子"
+    ],
+    "order": 7
+  },
+  "Ear": {
+    "chinese": "耳朵",
+    "aliases": [
+      "耳朵"
+    ],
+    "order": 8
+  },
+  "Face": {
+    "chinese": "脸颊",
+    "aliases": [
+      "脸颊"
+    ],
+    "order": 9
+  },
+  "Nose": {
+    "chinese": "鼻子",
+    "aliases": [
+      "鼻子"
+    ],
+    "order": 10
+  },
+  "Flush": {
+    "chinese": "红晕",
+    "aliases": [
+      "红晕"
+    ],
+    "order": 11
+  },
+  "Sweat": {
+    "chinese": "流汗",
+    "aliases": [
+      "流汗"
+    ],
+    "order": 12
+  },
+  "FaceLine": {
+    "chinese": "脸部线条",
+    "aliases": [
+      "脸部线条"
+    ],
+    "order": 13
+  },
+  "Chin": {
+    "chinese": "下巴",
+    "aliases": [
+      "下巴"
+    ],
+    "order": 14
+  },
+  "Attachment": {
+    "chinese": "额外部件",
+    "aliases": [
+      "额外部件"
+    ],
+    "order": 15
+  },
+  "Brow": {
+    "chinese": "眉毛",
+    "aliases": [
+      "眉毛"
+    ],
+    "order": 16
+  },
+  "Frown": {
+    "chinese": "皱眉",
+    "aliases": [
+      "皱眉"
+    ],
+    "order": 17
+  },
+  "Eye": {
+    "chinese": "眼睛",
+    "aliases": [
+      "眼睛"
+    ],
+    "order": 18
+  },
+  "Eyelid": {
+    "chinese": "眼睑",
+    "aliases": [
+      "眼睑"
+    ],
+    "order": 19
+  },
+  "Eyelash": {
+    "chinese": "睫毛",
+    "aliases": [
+      "睫毛"
+    ],
+    "order": 20
+  },
+  "Eyeball": {
+    "chinese": "眼球",
+    "aliases": [
+      "眼球"
+    ],
+    "order": 21
+  },
+  "EyeballLight": {
+    "chinese": "瞳孔高光",
+    "aliases": [
+      "瞳孔高光"
+    ],
+    "order": 22
+  },
+  "EyeSclera": {
+    "chinese": "眼白",
+    "aliases": [
+      "眼白"
+    ],
+    "order": 23
+  },
+  "Tears": {
+    "chinese": "眼泪",
+    "aliases": [
+      "眼泪"
+    ],
+    "order": 24
+  },
+  "Mouth": {
+    "chinese": "嘴巴",
+    "aliases": [
+      "嘴巴"
+    ],
+    "order": 25
+  },
+  "MouthUpperLip": {
+    "chinese": "上嘴皮",
+    "aliases": [
+      "上嘴皮"
+    ],
+    "order": 26
+  },
+  "MouthUnderLip": {
+    "chinese": "下嘴皮",
+    "aliases": [
+      "下嘴皮"
+    ],
+    "order": 27
+  },
+  "MouthLine": {
+    "chinese": "嘴线条",
+    "aliases": [
+      "嘴线条"
+    ],
+    "order": 28
+  },
+  "Tooth": {
+    "chinese": "牙齿",
+    "aliases": [
+      "牙齿"
+    ],
+    "order": 29
+  },
+  "Body": {
+    "chinese": "身体",
+    "aliases": [
+      "身体"
+    ],
+    "order": 30
+  },
+  "Clavicle": {
+    "chinese": "锁骨",
+    "aliases": [
+      "锁骨"
+    ],
+    "order": 31
+  },
+  "Axillar": {
+    "chinese": "腋羽",
+    "aliases": [
+      "腋羽"
+    ],
+    "order": 32
+  },
+  "Chest": {
+    "chinese": "胸部",
+    "aliases": [
+      "胸部"
+    ],
+    "order": 33
+  },
+  "Waist": {
+    "chinese": "腰部",
+    "aliases": [
+      "腰部"
+    ],
+    "order": 34
+  },
+  "Belly": {
+    "chinese": "腹部",
+    "aliases": [
+      "腹部"
+    ],
+    "order": 35
+  },
+  "BellyButton": {
+    "chinese": "肚脐",
+    "aliases": [
+      "肚脐"
+    ],
+    "order": 36
+  },
+  "Shoulder": {
+    "chinese": "肩膀",
+    "aliases": [
+      "肩膀"
+    ],
+    "order": 37
+  },
+  "UpperArm": {
+    "chinese": "上臂",
+    "aliases": [
+      "上臂"
+    ],
+    "order": 38
+  },
+  "Elbow": {
+    "chinese": "手肘",
+    "aliases": [
+      "手肘"
+    ],
+    "order": 39
+  },
+  "LowerArm": {
+    "chinese": "前臂",
+    "aliases": [
+      "前臂"
+    ],
+    "order": 40
+  },
+  "Hand": {
+    "chinese": "手",
+    "aliases": [
+      "手"
+    ],
+    "order": 41
+  },
+  "Wrist": {
+    "chinese": "手腕",
+    "aliases": [
+      "手腕"
+    ],
+    "order": 42
+  },
+  "Palm": {
+    "chinese": "手掌",
+    "aliases": [
+      "手掌"
+    ],
+    "order": 43
+  },
+  "Finger": {
+    "chinese": "手指",
+    "aliases": [
+      "手指"
+    ],
+    "order": 44
+  },
+  "Bottom": {
+    "chinese": "臀部",
+    "aliases": [
+      "臀部"
+    ],
+    "order": 45
+  },
+  "UpperLeg": {
+    "chinese": "大腿",
+    "aliases": [
+      "大腿"
+    ],
+    "order": 46
+  },
+  "Knee": {
+    "chinese": "膝盖",
+    "aliases": [
+      "膝盖"
+    ],
+    "order": 47
+  },
+  "LowerLeg": {
+    "chinese": "小腿",
+    "aliases": [
+      "小腿"
+    ],
+    "order": 48
+  },
+  "Ankle": {
+    "chinese": "脚踝",
+    "aliases": [
+      "脚踝"
+    ],
+    "order": 49
+  },
+  "Foot": {
+    "chinese": "足",
+    "aliases": [
+      "足"
+    ],
+    "order": 50
+  },
+  "Sleeve": {
+    "chinese": "袖子",
+    "aliases": [
+      "袖子"
+    ],
+    "order": 51
+  },
+  "Ribbon": {
+    "chinese": "蝴蝶结",
+    "aliases": [
+      "蝴蝶结"
+    ],
+    "order": 52
+  },
+  "Les": {
+    "chinese": "蕾丝花边",
+    "aliases": [
+      "蕾丝花边"
+    ],
+    "order": 53
+  },
+  "Skirt": {
+    "chinese": "裙",
+    "aliases": [
+      "裙"
+    ],
+    "order": 54
+  },
+  "Pants": {
+    "chinese": "裤子",
+    "aliases": [
+      "裤子"
+    ],
+    "order": 55
+  },
+  "Shoes": {
+    "chinese": "鞋",
+    "aliases": [
+      "鞋"
+    ],
+    "order": 56
+  },
+  "Headwear": {
+    "chinese": "头饰",
+    "aliases": [
+      "头饰"
+    ],
+    "order": 57
+  },
+  "Earring": {
+    "chinese": "耳环",
+    "aliases": [
+      "耳环"
+    ],
+    "order": 58
+  },
+  "Necklace": {
+    "chinese": "项链",
+    "aliases": [
+      "项链"
+    ],
+    "order": 59
+  },
+  "Neckring": {
+    "chinese": "颈环",
+    "aliases": [
+      "颈环"
+    ],
+    "order": 60
+  },
+  "Satchel": {
+    "chinese": "挎包",
+    "aliases": [
+      "挎包"
+    ],
+    "order": 61
+  },
+  "Buttons": {
+    "chinese": "纽扣",
+    "aliases": [
+      "纽扣"
+    ],
+    "order": 62
+  },
+  "Zipper": {
+    "chinese": "拉链",
+    "aliases": [
+      "拉链"
+    ],
+    "order": 63
+  }
+}

@@ -1,0 +1,19 @@
+QT += widgets concurrent testlib svg network
+CONFIG += c++20 release
+CONFIG -= debug debug_and_release
+CONFIG -= console
+TEMPLATE = app
+TARGET = PSDNaming
+SOURCES = main.cpp core.cpp window.cpp actions.cpp dictionary.cpp search.cpp updates.cpp selftest.cpp
+HEADERS = core.h window.h version.h
+RESOURCES += icons.qrc
+RESOURCES += dictionary.qrc
+RESOURCES += theme.qrc
+LIBS += -ldwmapi
+RC_ICONS = ../assets/icon.ico
+QMAKE_CXXFLAGS += -finput-charset=UTF-8 -fexec-charset=UTF-8
+QMAKE_CXXFLAGS += -no-canonical-prefixes
+QMAKE_LFLAGS += -no-canonical-prefixes
+CONFIG -= testcase
+QMAKE_LFLAGS_CONSOLE = -Wl,-subsystem,windows
+LIBS += -lpsapi

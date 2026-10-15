@@ -1,0 +1,4 @@
+{
+  "zh": ["完善一键发布准备流程：编译、功能验证、隔离目录验证、打包和校验。", "自动生成中英发布说明与 SHA256，检查版本号和更新仓库地址一致。", "发布前使用 GitHub 草稿，正式版下载仍保留在 v1.1.4，直到本版确认发布。"],
+  "en": ["Improve release preparation with build, functional checks, isolated-folder verification, packaging, and checksums.", "Generate bilingual release notes and SHA256, checking version and update-repository consistency.", "Prepare a GitHub draft for review; v1.1.4 remains the public latest release until this version is published."]
+}

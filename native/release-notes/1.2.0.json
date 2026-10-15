@@ -1,0 +1,22 @@
+{
+  "zh": [
+    "新增 Ctrl+F 图层列表：树状结构、文件夹优先显示、单击编辑名称、多选、全选切换和批量替换。",
+    "主界面新增图层搜索框，保留命中项的父文件夹并自动展开；清空后恢复展开状态。",
+    "词库支持完全匹配和包含匹配，应用前预览改名前后名称；匹配方式随方案保存。",
+    "新增独立编号设置窗口，支持数字或字母编号，分隔符原样保留，留空不添加分隔符。",
+    "文件夹可连同内部内容删除，删除前显示名称与子项数量并再次确认。",
+    "保存与另存为均先展示所有改动；使用新的文件名，保留源 PSD。",
+    "精简工具栏与图层列表，优化图标、名称编辑框、行分隔线和窄窗口布局。",
+    "免费开源，项目自有代码采用 MIT 许可；PSD 处理在本地完成，仅手动检查更新时联网。"
+  ],
+  "en": [
+    "Add a Ctrl+F layer list with a folder-first tree, single-click name editing, multi-selection, select-all toggle, and batch replacement.",
+    "Add toolbar layer search that retains and expands matching ancestors and restores expansion when cleared.",
+    "Add exact and contains dictionary matching, a before/after rename preview, and per-profile matching preferences.",
+    "Add a dedicated numbering settings dialog with numeric or alphabetic sequences and literal separators, including empty strings and spaces.",
+    "Allow deleting groups with their contents after a confirmation showing the name and descendant counts.",
+    "Review all changes before Save or Save As; write a new file and preserve the source PSD.",
+    "Simplify toolbar and layer-list controls; improve icons, inline editors, row separators, and narrow-window layouts.",
+    "Free and open source under MIT for original project code. PSD processing is offline; only manual update checks contact GitHub."
+  ]
+}

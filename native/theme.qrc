@@ -1,0 +1,1 @@
+<RCC><qresource prefix="/theme"><file alias="photoshop.qss">photoshop.qss</file></qresource><qresource prefix="/icons"><file alias="down.svg">icons/down.svg</file><file alias="up.svg">icons/up.svg</file><file alias="tick.svg">icons/tick.svg</file></qresource></RCC>
