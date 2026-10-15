@@ -18,4 +18,13 @@ public:
 };
 void setUiLanguage(QString code){if(code!="en"&&code!="ja")code="zh";activeUiLanguage=code;static StandardUiTranslator* translator=nullptr;if(!translator){translator=new StandardUiTranslator;qApp->installTranslator(translator);}QLocale::setDefault(QLocale(code=="en"?"en_US":code=="ja"?"ja_JP":"zh_CN"));}
 void bindUiText(QAbstractButton* button){button->setProperty("uiTextSource",uiSource(button->text()));}
-void retranslateUiButtons(QWidget* root){for(auto button:root->findChildren<QAbstractButton*>()){auto value=button->property("uiTextSource");if(!value.isValid())continue;QString key=value.toString();if(key.isEmpty())continue;button->setText(ui(key.toUtf8().constData()));if(qobject_cast<QPushButton*>(button)){int extra=button->icon().isNull()?20:42;button->setFixedWidth(qMax(button->height()==24?56:60,QFontMetrics(button->font()).horizontalAdvance(button->text())+extra));}else button->setFixedWidth(22+QFontMetrics(button->font()).horizontalAdvance(button->text()));button->updateGeometry();}}
+void fitUiButton(QAbstractButton* button){
+    button->ensurePolished();
+    if(button->parentWidget()&&button->parentWidget()->objectName()=="toolbar")button->setFixedHeight(32);
+    if(auto push=qobject_cast<QPushButton*>(button)){
+        push->setMinimumWidth(0);push->setMaximumWidth(QWIDGETSIZE_MAX);
+        push->setFixedWidth(qMax(push->height()==24?56:60,push->sizeHint().width()));
+    }else button->setFixedWidth(26+QFontMetrics(button->font()).horizontalAdvance(button->text()));
+    button->updateGeometry();
+}
+void retranslateUiButtons(QWidget* root){for(auto button:root->findChildren<QAbstractButton*>()){auto value=button->property("uiTextSource");if(!value.isValid())continue;QString key=value.toString();if(key.isEmpty())continue;button->setText(ui(key.toUtf8().constData()));fitUiButton(button);}}

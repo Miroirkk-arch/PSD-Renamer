@@ -6,3 +6,5 @@ QString uiSource(const QString& translated);
 void setUiLanguage(QString language);
 void bindUiText(QAbstractButton* button);
 void retranslateUiButtons(QWidget* root);
+
+void fitUiButton(QAbstractButton* button);

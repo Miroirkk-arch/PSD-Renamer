@@ -2,6 +2,26 @@
 #include <QtTest>
 bool localeSelfTest(Window& w,QString directory,QString& error){
     auto snapshot=serializeLayers(w.doc.roots);auto profiles=w.dictionaryProfiles;auto rules=w.dictionary;auto size=w.size();bool night=w.night;
+    bool thumbnails=w.thumbnailsEnabled,canvas=w.canvasEnabled;
+    auto toolbar=w.openButton->parentWidget();
+    for(QString code:{QString("zh"),QString("en"),QString("ja")})for(bool previews:{false,true}){
+        w.languageChoice->setCurrentIndex(w.languageChoice->findData(code));
+        w.setThumbnailsEnabled(previews);w.setCanvasEnabled(previews);
+        if(w.thumbnailButton->isChecked()!=previews||w.canvasButton->isChecked()!=previews){error="preview button state mismatch";return false;}
+        for(int width:{1400,1100}){
+            w.resize(width,850);QTest::qWait(70);
+            auto controls=toolbar->findChildren<QWidget*>(QString(),Qt::FindDirectChildrenOnly);
+            for(int i=0;i<controls.size();++i){
+                auto control=controls[i];
+                if(control->height()!=32||!toolbar->rect().contains(control->geometry())){w.grab().save(directory+"/toolbar-failure.png");error=QString("toolbar height or bounds: %1 %2,%3 %4x%5 parent %6x%7").arg(control->objectName()).arg(control->x()).arg(control->y()).arg(control->width()).arg(control->height()).arg(toolbar->width()).arg(toolbar->height());return false;}
+                if(auto push=qobject_cast<QPushButton*>(control)){if(!push->text().isEmpty()&&push->width()<push->sizeHint().width()){error="styled toolbar text clipped: "+push->text();return false;}}
+                else if(auto toggle=qobject_cast<QAbstractButton*>(control)){if(toggle->width()<26+QFontMetrics(toggle->font()).horizontalAdvance(toggle->text())){error="toolbar toggle text clipped";return false;}}
+                for(int j=0;j<i;++j){auto other=controls[j];if(control->geometry().intersects(other->geometry())){error="toolbar controls overlap";return false;}if(qAbs(control->y()-other->y())<32&&control->y()!=other->y()){error="toolbar row misaligned";return false;}}
+            }
+            w.grab().save(directory+"/toolbar-"+code+"-"+QString::number(width)+(previews?"-shown.png":"-hidden.png"));
+        }
+    }
+    w.setThumbnailsEnabled(thumbnails);w.setCanvasEnabled(canvas);
     for(QString code:{QString("en"),QString("ja")}){
         w.languageChoice->setCurrentIndex(w.languageChoice->findData(code));QTest::qWait(70);
         if(uiLanguage()!=code||w.settings.value("ui-language").toString()!=code||w.openButton->text()!=(code=="en"?QString("Open PSD"):QString::fromUtf8("PSD を開く"))){error="language switching or preference failed";return false;}

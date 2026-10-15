@@ -2,7 +2,20 @@
 #include <QtWidgets>
 class ToolbarFlow:public QLayout {
     QList<QLayoutItem*> items;
-    int arrange(QRect rect,bool measure)const {auto margins=contentsMargins();QRect area=rect.adjusted(margins.left(),margins.top(),-margins.right(),-margins.bottom());int x=area.left(),y=area.top(),height=0;for(auto item:items){auto size=item->sizeHint();if(x>area.left()&&x+size.width()>area.right()+1){x=area.left();y+=height+8;height=0;}if(!measure)item->setGeometry(QRect(QPoint(x,y),size));x+=size.width()+8;height=qMax(height,size.height());}return y+height-rect.top()+margins.bottom();}
+    int arrange(QRect rect,bool measure)const {
+        auto margins=contentsMargins();
+        QRect area=rect.adjusted(margins.left(),margins.top(),-margins.right(),-margins.bottom());
+        int x=area.left(),y=area.top(),height=0;
+        QList<QPair<QLayoutItem*,QRect>> row;
+        auto finishRow=[&]{for(auto entry:row){auto geometry=entry.second;geometry.moveTop(y+(height-geometry.height())/2);if(!measure){if(auto widget=entry.first->widget())widget->setGeometry(geometry);else entry.first->setGeometry(geometry);}}row.clear();};
+        for(auto item:items){
+            auto size=item->sizeHint().expandedTo(item->minimumSize()).boundedTo(item->maximumSize());
+            if(auto widget=item->widget())size=widget->sizeHint().expandedTo(widget->minimumSize()).boundedTo(widget->maximumSize());
+            if(x>area.left()&&x+size.width()>area.right()+1){finishRow();x=area.left();y+=height+spacing();height=0;}
+            row.append({item,QRect(QPoint(x,y),size)});x+=size.width()+spacing();height=qMax(height,size.height());
+        }
+        finishRow();return y+height-rect.top()+margins.bottom();
+    }
 public:
     explicit ToolbarFlow(QWidget* parent):QLayout(parent){}
     ~ToolbarFlow(){while(auto item=takeAt(0))delete item;}
