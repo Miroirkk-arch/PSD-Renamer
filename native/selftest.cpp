@@ -3,6 +3,7 @@
 #include <cstdio>
 #include <windows.h>
 #include <psapi.h>
+bool localeSelfTest(Window&,QString,QString&);
 static bool waitFor(std::function<bool()> condition,int limit=30000){QElapsedTimer timer;timer.start();while(!condition()){if(timer.elapsed()>limit)return false;QTest::qWait(10);}return true;}
 static QJsonObject memory(){PROCESS_MEMORY_COUNTERS_EX counters{};GetProcessMemoryInfo(GetCurrentProcess(),reinterpret_cast<PROCESS_MEMORY_COUNTERS*>(&counters),sizeof(counters));return {{"workingMB",double(counters.WorkingSetSize)/1048576},{"privateMB",double(counters.PrivateUsage)/1048576}};}
 int selfTest(Window& w,QString input,bool benchmark){QString directory=QCoreApplication::applicationDirPath()+"/test-results";QDir().mkpath(directory);QJsonObject result{{"mode",benchmark?"benchmark":"smoke"}};auto write=[&](bool pass,QString error={}){result["pass"]=pass;result["error"]=error;QFile file(directory+(benchmark?"/benchmark.json":"/smoke.json"));file.open(QIODevice::WriteOnly);file.write(QJsonDocument(result).toJson());return pass?0:1;};
@@ -102,5 +103,5 @@ int selfTest(Window& w,QString input,bool benchmark){QString directory=QCoreAppl
     QString customSave=QFileInfo(input).absolutePath()+"/custom-save.psd";bool saveAsConfirmed=false;QTimer::singleShot(100,&w,[&]{if(auto d=qobject_cast<QDialog*>(QApplication::activeModalWidget())){saveAsConfirmed=d->objectName()=="changesReview";chooseFile(customSave);d->findChild<QDialogButtonBox*>()->button(QDialogButtonBox::Ok)->click();}});QTest::mouseClick(w.saveAsButton,Qt::LeftButton);if(!saveAsConfirmed||!waitFor([&]{return !w.busy;},90000)||w.savePath!=customSave||!QFile::exists(customSave)||fileBytes(input)!=originalSource)return write(false,"confirmed save-as failed or overwrote source");
     QString output=directory+"/native-output.psd";QFile::remove(output);w.writeSave(output);if(!waitFor([&]{return !w.busy;},90000)||!QFile::exists(output))return write(false,"PSD save failed");result["saved"]=output;
     w.canvasButton->click();w.night=true;w.theme();w.grab().save(directory+"/dark.png");QTimer::singleShot(100,&w,[&]{if(auto d=qobject_cast<QDialog*>(QApplication::activeModalWidget())){d->grab().save(directory+"/dictionary-dark.png");d->reject();}});w.dictionarySettings();w.night=false;w.theme();
-    if(!waitFor([&]{return !w.canvas->watcher.isRunning();}))return write(false,"render pending");result["finalMemory"]=memory();return write(true);
+    if(!waitFor([&]{return !w.canvas->watcher.isRunning();}))return write(false,"render pending");dialogs.stop();QString localeError;if(!localeSelfTest(w,directory,localeError))return write(false,localeError);result["localesPassed"]=true;result["finalMemory"]=memory();return write(true);
 }

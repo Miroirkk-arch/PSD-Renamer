@@ -1,0 +1,18 @@
+{
+  "zh": [
+    "新增英语和日语界面，与中文一起可在顶部直接切换，并记住语言选择。",
+    "完成按钮、词库、图层列表、方向后缀、编号设置、保存确认、删除确认和状态提示翻译。",
+    "切换界面语言不修改图层名称、用户词库或未保存的 PSD 改动，并保留图层列表的替换输入。",
+    "工具栏根据语言文字长度调整控件宽度，窄窗口自动换行；同时检查深浅色模式。",
+    "工具及可执行文件统一命名为 PSD-Renamer，清理旧 Electron 依赖、历史重复目录与反馈入口。",
+    "增加翻译覆盖、占位符一致性、英日界面布局及语言切换数据保持测试。"
+  ],
+  "en": [
+    "Add English and Japanese interfaces alongside Chinese, with instant language switching and a saved preference.",
+    "Translate buttons, dictionary management, layer lists, side suffixes, numbering, save/delete confirmations, and status messages.",
+    "Switching languages preserves layer names, user dictionaries, unsaved PSD edits, and pending replacement inputs.",
+    "Adapt control widths to translated text and wrap the toolbar in narrow windows; verify light and dark modes.",
+    "Unify the application and executable name as PSD-Renamer; remove obsolete Electron dependencies, duplicate folders, and feedback entry points.",
+    "Add translation coverage, placeholder consistency, English/Japanese layout, and document-preservation tests."
+  ]
+}

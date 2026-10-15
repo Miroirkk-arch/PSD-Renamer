@@ -1,0 +1,69 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🚀 启动 PSD-Renamer（开发模式）",
+      "type": "shell",
+      "command": "cmd",
+      "args": ["/c", "npm run dev"],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "shell": {
+          "executable": "cmd.exe",
+          "args": ["/d", "/c"]
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "clear": true,
+        "showReuseMessage": false
+      },
+      "problemMatcher": [],
+      "isBackground": true
+    },
+    {
+      "label": "📦 打包 PSD-Renamer（生产版本）",
+      "type": "shell",
+      "command": "cmd",
+      "args": ["/c", "npm run build"],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "shell": {
+          "executable": "cmd.exe",
+          "args": ["/d", "/c"]
+        }
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "📥 安装依赖",
+      "type": "shell",
+      "command": "cmd",
+      "args": ["/c", "npm install --legacy-peer-deps"],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "shell": {
+          "executable": "cmd.exe",
+          "args": ["/d", "/c"]
+        }
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

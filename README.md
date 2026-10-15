@@ -1,11 +1,11 @@
-# PSD-Renamer · PSD命名修改
+# PSD-Renamer
 
 [![Latest release](https://img.shields.io/github/v/release/Miroirkk-arch/PSD-Renamer)](https://github.com/Miroirkk-arch/PSD-Renamer/releases/latest) ![Windows x64](https://img.shields.io/badge/platform-Windows%20x64-blue) ![Offline](https://img.shields.io/badge/PSD%20processing-offline-green)
 
-**[下载最新版 / Download latest](https://github.com/Miroirkk-arch/PSD-Renamer/releases/latest)** · [v1.2.0 Windows ZIP](https://github.com/Miroirkk-arch/PSD-Renamer/releases/download/v1.2.0/PSDNaming-v1.2.0-win-x64.zip) · [反馈 / Report an issue](https://github.com/Miroirkk-arch/PSD-Renamer/issues/new/choose)
+**[下载最新版 / Download latest](https://github.com/Miroirkk-arch/PSD-Renamer/releases/latest)** · [v1.3.0 Windows ZIP](https://github.com/Miroirkk-arch/PSD-Renamer/releases/download/v1.3.0/PSD-Renamer-v1.3.0-win-x64.zip)
 
-Windows 64 位 · 中文界面 · 无需 Photoshop · 无需安装 Node.js 或 Qt  
-Windows x64 · Chinese UI · No Photoshop required · Bundled runtimes
+Windows 64 位 · 中文／English／日本語 · 无需 Photoshop · 无需安装 Node.js 或 Qt  
+Windows x64 · Chinese / English / Japanese UI · No Photoshop required · Bundled runtimes
 
 ![软件界面 / Application preview](preview.png)
 
@@ -28,11 +28,11 @@ A Windows desktop tool for quickly renaming PSD layers in batches, with editable
 - **图层管理**：树状列表、Ctrl 多选、Shift 范围选择、新建图层／文件夹、拖拽排序和移动到组、删除图层及文件夹（含内容，需确认）。
 - **预览**：图层缩略图与整体画布，支持画布缩放、显隐切换和调整分栏宽度；可分别关闭缩略图与画布。
 - **另存文件**：保存前查看所有改动，默认使用 `原名_1.psd`，不覆盖原文件。
-- **界面**：深浅色模式，当前软件界面为中文。
+- **界面**：中文、英语、日语即时切换并记住选择，支持深浅色模式；界面语言不改变 PSD 图层名称或用户词库。
 
 ### 下载与打开
 
-在 [最新发布页](https://github.com/Miroirkk-arch/PSD-Renamer/releases/latest) 下载 `PSDNaming-v版本号-win-x64.zip`，解压完整文件夹后打开 `PSD命名修改.exe`。请保留文件夹中的运行依赖，不要只复制 exe。
+在 [最新发布页](https://github.com/Miroirkk-arch/PSD-Renamer/releases/latest) 下载 `PSD-Renamer-v版本号-win-x64.zip`，解压完整文件夹后打开 `PSD-Renamer.exe`。请保留文件夹中的运行依赖，不要只复制 exe。
 
 适用于 Windows 64 位电脑；无需安装或打开 Photoshop，也无需单独安装 Node.js 或 Qt。
 
@@ -42,11 +42,9 @@ PSD 读取、修改、预览和保存，以及字典管理，都在本地完成�
 
 更新时关闭旧版，将新版 ZIP 解压到新文件夹。个人字典方案和设置保存在用户目录中，更新程序不会覆盖它们。
 
-### 反馈
-
-欢迎在 **Issues** 提交问题或建议。请附上版本号、重现步骤和必要的截图；不要上传包含私人内容的 PSD 文件。
-
 ## English
+
+![English interface](docs/preview-en.png)
 
 ### Features
 
@@ -58,11 +56,11 @@ PSD 读取、修改、预览和保存，以及字典管理，都在本地完成�
 - **Layer management:** a tree view, Ctrl multi-selection, Shift range selection, new layers and groups, drag-and-drop ordering and regrouping, and confirmed deletion of layers and groups, including their contents.
 - **Previews:** layer thumbnails and a zoomable canvas, visibility controls, an adjustable divider, and separate switches to hide thumbnails or the canvas.
 - **Save as a new file:** review changes before saving; the default name is `original_1.psd`. The source file is kept intact.
-- **Appearance:** light and dark modes. The application interface is currently in Chinese.
+- **Interface:** Chinese, English, and Japanese with instant switching and a saved preference, plus light and dark modes. Changing the UI language leaves PSD layer names and user dictionaries untouched.
 
 ### Download and run
 
-Download `PSDNaming-vVERSION-win-x64.zip` from the [latest release page](https://github.com/Miroirkk-arch/PSD-Renamer/releases/latest), extract the entire folder, and run `PSD命名修改.exe`. Keep the included runtime files alongside the executable.
+Download `PSD-Renamer-vVERSION-win-x64.zip` from the [latest release page](https://github.com/Miroirkk-arch/PSD-Renamer/releases/latest), extract the entire folder, and run `PSD-Renamer.exe`. Keep the included runtime files alongside the executable.
 
 For 64-bit Windows. Photoshop is not required, and there is no need to install Node.js or Qt separately.
 
@@ -72,20 +70,16 @@ PSD processing and dictionary management run locally. The app contacts GitHub on
 
 To update, close the old app and extract the new ZIP into a new folder. Personal dictionary profiles and settings are stored in your user profile and are retained across application updates.
 
-### Feedback
-
-Use **Issues** for bug reports and suggestions. Include the app version, steps to reproduce, and relevant screenshots. Please do not upload PSD files containing private material.
-
 ## 更多信息 / More information
 
-- [常见问题与反馈 / FAQ & support](SUPPORT.md)
+- [常见问题 / FAQ](SUPPORT.md)
 - [版本记录 / Changelog](CHANGELOG.md)
 - [第三方组件 / Third-party notices](THIRD_PARTY_NOTICES.md)
-- [v1.2.0 SHA256](SHA256SUMS.txt)
+- [v1.3.0 SHA256](SHA256SUMS.txt)
 
-本仓库包含原生版源码、文档与反馈入口。直接使用请下载 Releases 附件中的 Windows ZIP；GitHub 自动生成的 Source code 压缩包是源码，不是可运行程序。
+本仓库包含原生版源码与文档。直接使用请下载 Releases 附件中的 Windows ZIP；GitHub 自动生成的 Source code 压缩包是源码，不是可运行程序。
 
-This repository includes native application source, documentation, and issue reporting. To run the app, download the Windows ZIP attached to Releases. GitHub’s generated Source code archives are for development, not ready-to-run binaries.
+This repository includes native application source and documentation. To run the app, download the Windows ZIP attached to Releases. GitHub’s generated Source code archives are for development, not ready-to-run binaries.
 
 ## 开源许可 / License
 
@@ -98,3 +92,18 @@ Original project code is licensed under the [MIT License](LICENSE), permitting f
 当前界面为 C++ / Qt Widgets，不依赖 Electron。PSD 编解码由随包运行的 Node.js + ag-psd 完成。构建步骤见 [native/README.md](native/README.md)，发布步骤见 [native/PUBLISH.md](native/PUBLISH.md)。
 
 The current UI uses C++ / Qt Widgets without Electron. PSD decoding and encoding use a bundled Node.js + ag-psd process. See [native/README.md](native/README.md) for building and [native/PUBLISH.md](native/PUBLISH.md) for release preparation.
+
+## 日本語
+
+PSD レイヤーの名前をまとめて変更できる Windows 用ツールです。インストールや Photoshop は不要です。
+
+- 画面上部で「中文」「English」「日本語」を切り替えられます。言語の選択は保存されます。
+- 辞書による名前変更、完全一致／部分一致、変更前後のプレビューに対応しています。
+- Ctrl+F でレイヤー一覧を開き、名前の編集、複数選択、一括置換ができます。
+- 数字／アルファベットの連番、区切り文字、位置サフィックスを設定できます。
+- 保存前に変更内容を確認し、元の PSD を上書きせずに新しいファイルへ保存します。
+- 言語を切り替えても、レイヤー名やユーザー辞書の内容は変更されません。
+
+[最新版をダウンロード](https://github.com/Miroirkk-arch/PSD-Renamer/releases/latest)し、ZIP 全体を展開して `PSD-Renamer.exe` を開いてください。付属ファイルは削除せず、実行ファイルと一緒に保管してください。
+
+![日本語インターフェース](docs/preview-ja.png)

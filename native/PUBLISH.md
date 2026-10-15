@@ -13,7 +13,7 @@ npm run release:prepare -- --version 1.1.5
 
 这条命令检查线上版本、同步版本号、编译、运行原生功能和 PSD 保存验证、生成完整 ZIP、检查运行依赖与数据隔离，再把 ZIP 解压到隔离目录重新运行验证。成功后生成：
 
-- `release/PSDNaming-v1.1.5-win-x64.zip`
+- `release/PSD-Renamer-v1.1.5-win-x64.zip`
 - `release/prepared-v1.1.5/RELEASE.md`：中英发布说明
 - `release/prepared-v1.1.5/SHA256SUMS.txt`
 - `release/prepared-v1.1.5/READY.json`：验证结果与 ZIP 校验值
@@ -42,4 +42,6 @@ npm run release:draft -- --version 1.1.5
 
 本项目自有代码采用 MIT 许可证，发布包自动包含 LICENSE 与第三方组件说明。不进行数字签名。
 
-日常开发只在本地修改和验证。仅在用户明确要求上传或发布后，才执行草稿上传或正式发布；准备命令默认不上传。应用源码尚未推送到公开仓库，下次获得上传指令时再整理并提交源码。
+日常开发只在本地修改和验证。仅在用户明确要求上传或发布后，才执行草稿上传或正式发布；准备命令默认不上传。应用源码、翻译与发布说明随获准发布的版本一起提交；日常改动保留在本地。
+
+本项目不提供建议或问题反馈入口。下次获准发布时，关闭 GitHub 仓库的 Issues，不添加反馈模板。

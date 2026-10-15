@@ -51,7 +51,7 @@ try {
     document.imageData = { width: document.width, height: document.height, data: new Uint8ClampedArray(merged.buffer, merged.byteOffset, merged.byteLength) };
     delete document.canvas;
     if (document.imageResources) { delete document.imageResources.thumbnail; delete document.imageResources.thumbnailRaw; }
-    document.imageResources = { ...document.imageResources, versionInfo: { hasRealMergedData: false, writerName: 'PSD命名修改', readerName: 'PSD命名修改', fileVersion: 1 } };
+    document.imageResources = { ...document.imageResources, versionInfo: { hasRealMergedData: false, writerName: 'PSD-Renamer', readerName: 'PSD-Renamer', fileVersion: 1 } };
     const bytes = writePsdBuffer(document, { generateThumbnail: false });
     const fd = fs.openSync(output, 'wx');
     try { fs.writeFileSync(fd, bytes); } catch (error) { fs.closeSync(fd); fs.unlinkSync(output); throw error; }

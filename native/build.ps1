@@ -22,12 +22,11 @@ try {
     & "$taskCompiler\mingw32-make.exe" -j4
     if ($LASTEXITCODE -ne 0) { throw 'C++ compilation failed' }
 } finally { Pop-Location }
-$taskStage = Join-Path $taskRoot 'release-native'
+$taskStage = Join-Path $taskRoot 'release\PSD-Renamer'
 New-Item -ItemType Directory -Path $taskStage -Force | Out-Null
-Copy-Item -LiteralPath (Join-Path $taskBuild 'PSDNaming.exe') -Destination (Join-Path $taskStage 'PSDNaming.exe') -Force
-& "$taskQt\bin\windeployqt.exe" --release --no-translations --no-opengl-sw --no-system-d3d-compiler (Join-Path $taskStage 'PSDNaming.exe')
+Copy-Item -LiteralPath (Join-Path $taskBuild 'PSD-Renamer.exe') -Destination (Join-Path $taskStage 'PSD-Renamer.exe') -Force
+& "$taskQt\bin\windeployqt.exe" --release --no-translations --no-opengl-sw --no-system-d3d-compiler (Join-Path $taskStage 'PSD-Renamer.exe')
 if ($LASTEXITCODE -ne 0) { throw 'Qt deployment failed' }
-Move-Item -LiteralPath (Join-Path $taskStage 'PSDNaming.exe') -Destination (Join-Path $taskStage 'PSD命名修改.exe') -Force
 $taskCodec = Join-Path $taskStage 'codec'
 New-Item -ItemType Directory -Path $taskCodec -Force | Out-Null
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'psd-bridge.cjs') -Destination $taskCodec -Force
@@ -41,5 +40,5 @@ if (Test-Path -LiteralPath (Join-Path $PSScriptRoot 'licenses')) { Copy-Item -Li
 Copy-Item -LiteralPath (Join-Path $taskRoot 'dictionary.json') -Destination $taskStage -Force
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'update-source.json') -Destination $taskStage -Force
 Copy-Item -LiteralPath (Join-Path $taskRoot 'LICENSE') -Destination $taskStage -Force
-Copy-Item -LiteralPath (Join-Path $taskRoot 'publish/THIRD_PARTY_NOTICES.md') -Destination $taskStage -Force
-Write-Output (Join-Path $taskStage 'PSD命名修改.exe')
+Copy-Item -LiteralPath (Join-Path $taskRoot 'THIRD_PARTY_NOTICES.md') -Destination $taskStage -Force
+Write-Output (Join-Path $taskStage 'PSD-Renamer.exe')

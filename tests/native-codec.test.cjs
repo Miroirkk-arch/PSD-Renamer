@@ -1,7 +1,7 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('fs'),path=require('path'),crypto=require('crypto');const {readPsd,initializeCanvas}=require('ag-psd');
 initializeCanvas(()=>{throw Error('canvas');},(width,height)=>({width,height,data:new Uint8ClampedArray(width*height*4)}));
 test('native PSD save retains original layer pixels, masks, opacity and clipping after moves',()=>{
- const source=path.join(__dirname,'.native','样例.psd'),staged=path.join(__dirname,'..','release-native','test-results','native-output.psd');
+ const source=path.join(__dirname,'.native','样例.psd'),staged=path.join(__dirname,'..','release','PSD-Renamer','test-results','native-output.psd');
  const output=process.env.PSD_NATIVE_OUTPUT||(fs.existsSync(staged)?staged:path.join(__dirname,'.native','results','native-output.psd'));
  const read=file=>readPsd(fs.readFileSync(file),{useImageData:true,useRawThumbnail:true});const before=read(source),after=read(output);
  const index=doc=>{const map=new Map();const walk=nodes=>nodes.forEach(n=>{if(n.children)walk(n.children);else map.set(n.name,n);});walk(doc.children);return map;};const a=index(before),b=index(after);

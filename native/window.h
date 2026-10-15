@@ -1,5 +1,6 @@
 #pragma once
 #include "core.h"
+#include "i18n.h"
 #include <QtConcurrent>
 class Window;
 class LayerModel:public QAbstractItemModel {
@@ -57,7 +58,7 @@ public:
     QColor bg()const{return QColor(night?"#252525":"#bfbfbf");} QColor panel()const{return QColor(night?"#383838":"#dedede");}
     QColor text()const{return QColor(night?"#e2e2e2":"#262626");} QColor border()const{return QColor(night?"#242424":"#a4a4a4");}
     QColor muted()const{return QColor(night?"#b0b0b0":"#646464");}
-    void theme();void refresh(bool structure=false,bool pixels=false);void load(QString path);void startCodec(QString op,QString output,std::function<void(bool,QString)> done);
+    void theme();void retranslate();QComboBox* languageChoice=nullptr;void refresh(bool structure=false,bool pixels=false);void load(QString path);void startCodec(QString op,QString output,std::function<void(bool,QString)> done);
     void setBusy(bool);void select(Layer*,bool);void selectRow(Layer*,Qt::KeyboardModifiers);QVector<Layer*> visibleLayers()const;void visibility(Layer*,bool);void expandAll(bool);void number();void createLayer();void createGroup();void deleteSelection();void move(Layer*,Layer*,int);
     QString proposedName(Layer*,const QJsonObject&,QString,bool)const;bool previewDictionary(const QJsonObject&,QString,bool confirm=false);void findLayers();void filterLayers();void updateLayerSearch();void locateLayer(QString);
     void setThumbnailsEnabled(bool);void setCanvasEnabled(bool);void checkUpdates();void naming();void directionSettings();void numberingSettings();void dictionarySettings();void preview(Layer*);void save(bool saveAs=false);void writeSave(QString);
